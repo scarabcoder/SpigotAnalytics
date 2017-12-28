@@ -1,0 +1,5 @@
+name: SpigotAnalytics
+main: com.scarabcoder.spigotanalytics.SpigotAnalytics
+version: ${project.version}
+authors: [Nick Harris (ScarabCoder]
+description: Get analytics from Minecraft into Google Analytics
