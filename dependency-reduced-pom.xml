@@ -30,6 +30,7 @@
                   <include>commons-logging:commons-logging:*</include>
                   <include>org.json:json:*</include>
                   <include>org.jetbrains.kotlin:*</include>
+                  <include>com.google.code.gson:gson:*</include>
                 </includes>
               </artifactSet>
             </configuration>

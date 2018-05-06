@@ -2,6 +2,7 @@ package com.scarabcoder.spigotanalytics
 
 import com.mashape.unirest.http.Unirest
 import com.mashape.unirest.request.body.MultipartBody
+import com.scarabcoder.spigotanalytics.listener.ChatListener
 import com.scarabcoder.spigotanalytics.listener.ConnectionListener
 import net.md_5.bungee.api.connection.ProxiedPlayer
 import net.md_5.bungee.api.plugin.Plugin
@@ -20,6 +21,7 @@ class SpigotAnalytics : Plugin() {
 
     override fun onEnable() {
         proxy.pluginManager.registerListener(this, ConnectionListener())
+        proxy.pluginManager.registerListener(this, ChatListener())
         if(!dataFolder.exists())
             dataFolder.mkdir()
         val cfg = File(dataFolder, "config.yml")
@@ -46,7 +48,6 @@ class SpigotAnalytics : Plugin() {
                     .field("tid", code)
                     .field("cid", player.uniqueId.toString())
                     .field("uip", player.pendingConnection.address.hostName)
-
             if(player.server != null){
                 return req.field("dp", player.server.info.name)
             }
